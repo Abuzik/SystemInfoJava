@@ -12,4 +12,5 @@ public class Main {
 ```
 
 ## Output(example): 
-```78
+```
+78
