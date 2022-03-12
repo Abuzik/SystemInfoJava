@@ -39,6 +39,22 @@ public class SystemInfo {
         return Long.parseLong(getMemoryValues().get(3));
     }
 
+    public static double allSize() throws IOException, InterruptedException {
+        return Double.parseDouble(getStorageInfo().get(1).split("G")[0]);
+    }
+
+    public static double usedSize() throws IOException, InterruptedException {
+        return Double.parseDouble(getStorageInfo().get(2).split("G")[0]);
+    }
+
+    public static double availableSize() throws IOException, InterruptedException {
+        return Double.parseDouble(getStorageInfo().get(3).split("G")[0]);
+    }
+
+    public static double percantageUse() throws IOException, InterruptedException {
+        return Double.parseDouble(getStorageInfo().get(4).split("%")[0]);
+    }
+
     protected static ArrayList<String> getProcessesValues() throws IOException, InterruptedException {
         Runtime run = Runtime.getRuntime();
         Process pr = run.exec("vmstat");
@@ -107,6 +123,34 @@ public class SystemInfo {
 //        item: 0, i: 4
 //        item: 543, i: 5
 //        item: 478, i: 6
+    }
+
+    protected static ArrayList<String> getStorageInfo() throws InterruptedException, IOException {
+        String cmd = "df -h /";
+        Runtime run = Runtime.getRuntime();
+        Process pr = run.exec(cmd);
+        pr.waitFor();
+        BufferedReader buf = new BufferedReader(new InputStreamReader(pr.getInputStream()));
+        ArrayList<String> str = new ArrayList<>();
+        String line = "";
+        while ((line=buf.readLine())!=null) {
+            str.add(line);
+        }
+
+        ArrayList<String> arr = new ArrayList<>(List.of(str.get(1).split(" ")));
+
+        arr.removeAll(Collections.singleton(""));
+
+        return new ArrayList<>(arr);
+
+//        Filesystem      Size  Used Avail Use% Mounted on
+//        /dev/vda1       9.8G  8.7G  1.1G  89% /
+//        item: /dev/vda1, i: 0
+//        item: 9.8G, i: 1
+//        item: 8.7G, i: 2
+//        item: 1.1G, i: 3
+//        item: 89%, i: 4
+//        item: /, i: 5
     }
 }
 
