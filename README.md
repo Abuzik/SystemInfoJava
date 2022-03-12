@@ -1,4 +1,4 @@
-# SystemInfoJava
+# SystemInfo Java
 Get hardware info by using [vmstat](https://en.wikipedia.org/wiki/Vmstat) linux command
 ```java
 import java.io.IOException;
