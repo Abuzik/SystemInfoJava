@@ -14,3 +14,15 @@ public class Main {
 ## Output(example): 
 ```
 78
+```
+## List of all functions(all are static): 
+```java
+   SystemInfo.getCpuLoad();
+   SystemInfo.getSwpd();
+   SystemInfo.getFree();
+   SystemInfo.getBuff();
+   SystemInfo.getCache();
+   SystemInfo.totalMemory();
+   SystemInfo.usedMemory();
+   SystemInfo.freeMemory();
+```
