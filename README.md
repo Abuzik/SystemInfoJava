@@ -25,4 +25,8 @@ public class Main {
    SystemInfo.totalMemory();
    SystemInfo.usedMemory();
    SystemInfo.freeMemory();
+   SystemInfo.allSize();
+   SystemInfo.usedSize();
+   SystemInfo.availableSize();
+   SystemInfo.percantageUse();
 ```
