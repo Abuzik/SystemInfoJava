@@ -8,7 +8,7 @@ import java.util.List;
 public class SystemInfo {
 
     public static long getCpuLoad() throws IOException, InterruptedException {
-        return Long.parseLong(getProcessesValues().get(14));
+        return 100-Long.parseLong(getProcessesValues().get(14));
     }
 
     public static long getSwpd() throws IOException, InterruptedException {
