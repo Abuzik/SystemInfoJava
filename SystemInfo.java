@@ -63,7 +63,6 @@ public class SystemInfo {
         ArrayList<String> str = new ArrayList<>();
         String line = "";
         while ((line=buf.readLine())!=null) {
-            System.out.println(line);
             str.add(line);
         }
 
@@ -103,7 +102,6 @@ public class SystemInfo {
         ArrayList<String> str = new ArrayList<>();
         String line = "";
         while ((line=buf.readLine())!=null) {
-            System.out.println(line);
             str.add(line);
         }
 
