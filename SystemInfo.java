@@ -32,7 +32,8 @@ public class SystemInfo {
     }
 
     public static long usedMemory() throws IOException, InterruptedException {
-        return Long.parseLong(getMemoryValues().get(2));
+//        return Long.parseLong(getMemoryValues().get(2));
+        return Math.round(Long.parseLong(getMemoryValues().get(1))-Long.parseLong(getProcessesValues().get(3))/1024);
     }
 
     public static long freeMemory() throws IOException, InterruptedException {
